@@ -129,18 +129,23 @@ You can find all the mentions of licenses in the [Licensing file](LICENSING.md)
 ## Q&A
 
 Q. Does my friend get notified when i do any actions at all?
+
 A. No, they do not. You are responsible for what you store and/or put about them.
 
 Q. Can i turn this into a Public service?
+
 A. I mean, if you really want, but as ive mentioned above, i dont recommend it. It is built as a personal User Installed bot, not for that kind of use. If you do, you are responsible for all the data deletion requirements per your local law and in all other countries that this bot can reach.
 
 Q. Will you keep this updated?
+
 A. Possibly, i am not sure honestly, i built this out of just pure boredom and because i need to start getting organised (and maybe just archive a few things)
 
 Q. Does this break Discord's TOS?
+
 A. To my knowledge, no it doesnt. **BUT** if you do edit it to do more than what it should be intended to do and/or breaks their TOS, then yes it does. **Edit at your own risk.** Since you host it yourself, you are also the one responsible for following Discord's rules and your local privacy laws for whatever you store.
 
 Q. It doesnt start / the commands dont show up, what do i do?
+
 A. Check that your `.env` has no comments on the same line as a value, that the database exists and the user can reach it, and that you enabled **User Install** in the developer portal. You can always open an issue to let me know or do a PR request.
 
 ## Contact
