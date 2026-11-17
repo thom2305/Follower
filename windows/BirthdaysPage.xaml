@@ -1,0 +1,25 @@
+<!--
+  SPDX-License-Identifier: Apache-2.0
+  Copyright 2026 Thom (thom2305)
+-->
+<Page
+    x:Class="Follower.BirthdaysPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Padding="32,16,32,0" RowSpacing="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="TitleText" Text="Next 60 days" Style="{StaticResource TitleTextBlockStyle}" />
+        <Slider x:Name="DaysSlider" Grid.Row="1" Minimum="7" Maximum="366" Value="60" StepFrequency="1"
+                ValueChanged="DaysSlider_ValueChanged" />
+        <Grid Grid.Row="2">
+            <ListView x:Name="List" SelectionMode="None" IsItemClickEnabled="True" ItemClick="List_ItemClick"
+                      ItemTemplate="{StaticResource PersonRowTemplate}" />
+            <TextBlock x:Name="EmptyText" Text="No birthdays in that window." HorizontalAlignment="Center"
+                       VerticalAlignment="Top" Margin="0,32,0,0" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,12 @@
+<!--
+  SPDX-License-Identifier: Apache-2.0
+  Copyright 2026 Thom (thom2305)
+-->
+<Page
+    x:Class="Follower.ArchiveDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer x:Name="Scroll" HorizontalScrollBarVisibility="Disabled" HorizontalScrollMode="Disabled">
+        <StackPanel x:Name="Root" Padding="32,16,32,32" Spacing="14" HorizontalAlignment="Left" />
+    </ScrollViewer>
+</Page>

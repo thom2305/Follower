@@ -1,0 +1,21 @@
+Follower for Linux - third-party software
+=========================================
+
+Follower itself is (c) 2026 Thom (thom2305), licensed under the Apache License 2.0
+(see LICENSE and NOTICE).
+
+The Rust libraries below are compiled into the "follower" binary. GTK 4, libadwaita
+(LGPL-2.1-or-later), GLib and the C library are loaded from your system and are not bundled.
+
+{{#each licenses}}
+------------------------------------------------------------------------------
+{{name}}
+------------------------------------------------------------------------------
+
+Used by:
+{{#each used_by}}  - {{crate.name}} {{crate.version}}{{#if crate.repository}} ({{crate.repository}}){{/if}}
+{{/each}}
+
+{{{text}}}
+
+{{/each}}

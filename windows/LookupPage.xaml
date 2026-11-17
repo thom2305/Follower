@@ -1,0 +1,56 @@
+<!--
+  SPDX-License-Identifier: Apache-2.0
+  Copyright 2026 Thom (thom2305)
+-->
+<Page
+    x:Class="Follower.LookupPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer x:Name="Scroll" HorizontalScrollBarVisibility="Disabled" HorizontalScrollMode="Disabled">
+        <StackPanel x:Name="Column" Padding="32,16,32,32" Spacing="12" HorizontalAlignment="Left">
+            <TextBlock Text="Lookup" Style="{StaticResource TitleTextBlockStyle}" />
+            <TextBox x:Name="IdsBox" Header="User IDs or &lt;@mentions&gt;" AcceptsReturn="True" TextWrapping="Wrap"
+                     MinHeight="110" TextChanged="IdsBox_TextChanged" />
+            <TextBlock x:Name="HintText" Text="0 ID(s) found · paste as many as you like (max 25)"
+                       Style="{StaticResource CaptionTextBlockStyle}" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+
+            <Border Style="{StaticResource CardBorder}">
+                <StackPanel Spacing="10">
+                    <ToggleSwitch x:Name="SaveSwitch" Header="Also add to my list" Toggled="SaveSwitch_Toggled" />
+                    <StackPanel x:Name="SaveOptions" Spacing="10" Visibility="Collapsed">
+                        <ComboBox x:Name="RelationBox" Header="Status" MinWidth="240" />
+                        <TextBox x:Name="TagBox" Header="Tag (optional)" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <StackPanel Orientation="Horizontal" Spacing="8">
+                <Button x:Name="GoButton" Content="Look up" Style="{StaticResource AccentButtonStyle}" Click="Go_Click" />
+                <Button x:Name="SaveAllButton" Content="Save all to list" Click="SaveAll_Click" Visibility="Collapsed" />
+            </StackPanel>
+
+            <TextBlock x:Name="ResultsTitle" Text="Results" Style="{StaticResource SubtitleTextBlockStyle}" Visibility="Collapsed" />
+            <ListView x:Name="ResultsList" SelectionMode="None" IsItemClickEnabled="True" ItemClick="Results_ItemClick">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="4,10" ColumnSpacing="12">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <PersonPicture Width="40" Height="40" ProfilePicture="{Binding Avatar}" DisplayName="{Binding Name}" />
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding Name}" Style="{StaticResource BodyStrongTextBlockStyle}" />
+                                <TextBlock Text="{Binding Subtitle}" Style="{StaticResource CaptionTextBlockStyle}"
+                                           Foreground="{ThemeResource TextFillColorSecondaryBrush}" TextWrapping="Wrap" />
+                            </StackPanel>
+                            <Button Grid.Column="2" Content="Save" Tag="{Binding Id}" Visibility="{Binding SaveVisibility}"
+                                    VerticalAlignment="Center" Click="SaveOne_Click" />
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

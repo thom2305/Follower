@@ -1,0 +1,13 @@
+Follower
+Copyright 2026 Thom (thom2305)
+
+This product includes software developed by Thom (thom2305).
+
+Scope: this NOTICE and the Apache License 2.0 (see LICENSE) cover everything in
+this repository EXCEPT the bot/ folder, which is licensed under the GNU Affero
+General Public License v3.0 or later (see bot/LICENSE).
+
+Redistributions and derivative works of the Apache-licensed parts must retain
+this NOTICE file (or an equivalent attribution) in a NOTICE text file distributed
+with the work, or in the documentation or an "About" screen of the work, as
+required by Section 4(d) of the Apache License, Version 2.0.
